@@ -5,16 +5,21 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+
     <style>
       body {
         font-family: "Open Sans", sans-serif;
+        background-color: black;
       }
       #butcherVideo {
-        position: fixed;
-        right: 0;
+        position: absolute;
+        top: 0;
         bottom: 0;
-        min-width: 100%;
+        right: 0;
+        left: 0;
+        margin: auto;
         min-height: 100%;
+        min-width: 50%;
       }
       #overlay {
         position: fixed;
@@ -38,16 +43,36 @@
         -ms-transform: translate(-50%, -50%);
         text-align: center;
       }
+      .video_container {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+      }
+      @media only screen and (min-width: 768px) {
+        #butcherVideo {
+          min-height: 100vh;
+        }
+      }
     </style>
   </head>
   <body>
-    <video autoplay muted loop id="butcherVideo">
-      <source src="butcher.mp4" type="video/mp4" />
-      Your browser does not support HTML5 video.
-    </video>
+    <div class="video_container">
+      <video autoplay muted loop id="butcherVideo">
+        <source src="butcher.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <!-- <div class="wrapper">
+      <h1>JawMeen<br /></h1>
+      <video src="butcher.mp4" autoplay loop></video>
+    </div> -->
+
     <div id="overlay">
       <div id="text">
-        JawMeen<br />
+        <h1>JAWMEEN</h1>
+        <p>your meat store</p>
+        <br />
         Contact Us: +91-1234567890
       </div>
     </div>
